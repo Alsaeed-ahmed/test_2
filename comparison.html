@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarShowcase | Comparison</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Extra styles specific to comparison page */
+    .comp-intro {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+    .comp-intro p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+  </style>
+</head>
+<body id="body" class="light">
+
+<nav id="navbar">
+  <div class="nav-brand"><a href="index.html">🏎 CarShowcase</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li><a href="bmw.html">BMW</a></li>
+    <li><a href="mercedes.html">Mercedes</a></li>
+    <li><a href="audi.html">Audi</a></li>
+    <li><a href="comparison.html">Compare</a></li>
+    <li id="auth-nav-item"><a href="login.html">Login</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <button class="btn-icon audio-btn" id="sound-btn" onclick="playEngineSound()">🔊 Engine</button>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+<main>
+
+  <!-- ── Page Header ── -->
+  <div class="page-header">
+    <h1>⚖️ Car Comparison</h1>
+    <p>Technical specifications for all 9 models — BMW vs Mercedes-Benz vs Audi</p>
+  </div>
+
+  <div class="comparison-page">
+
+    <!-- ══════════════════════════════════════════════════════
+         ADVANCED SPECS TABLE
+         Uses both colspan AND rowspan as required.
+
+         colspan: Brand header cells span 3 model columns each
+         rowspan: Category label cells span multiple spec rows
+         ══════════════════════════════════════════════════════ -->
+    <h2 style="font-size:1.6rem;font-weight:800;margin-bottom:1rem;color:var(--text)">
+      Technical Specifications
+    </h2>
+    <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.5rem">
+      ✅ marks the winner in each category. All prices in USD.
+    </p>
+
+    <div class="specs-table-wrap">
+      <table class="specs-table">
+
+        <!-- ── THEAD with colspan ── -->
+        <thead>
+          <tr>
+            <!-- Category column header — no span -->
+            <th style="width:120px">Category</th>
+            <th style="width:100px">Spec</th>
+
+            <!-- Brand header: colspan="3" spans M3, X5, i8 columns -->
+            <th colspan="3" class="brand-header">🚗 BMW</th>
+
+            <!-- Brand header: colspan="3" spans G-Class, AMG GT, S-Class -->
+            <th colspan="3" class="brand-header" style="background:#222">⭐ Mercedes-Benz</th>
+
+            <!-- Brand header: colspan="3" spans R8, Q8, RS6 -->
+            <th colspan="3" class="brand-header" style="background:#1a1a2e">💎 Audi</th>
+          </tr>
+          <tr>
+            <th></th>
+            <th></th>
+            <!-- BMW model sub-headers -->
+            <th>M3 Competition</th>
+            <th>X5 M60i</th>
+            <th>i8 Roadster</th>
+            <!-- Mercedes sub-headers -->
+            <th>AMG G 63</th>
+            <th>AMG GT Black</th>
+            <th>S-Class S580</th>
+            <!-- Audi sub-headers -->
+            <th>R8 V10 Plus</th>
+            <th>Q8 e-tron</th>
+            <th>RS6 Avant</th>
+          </tr>
+        </thead>
+
+        <!-- ── TBODY with rowspan ── -->
+        <tbody>
+
+          <!-- ── PRICING section: rowspan="2" for category label ── -->
+          <tr>
+            <!-- rowspan="2": "Pricing" label spans 2 rows (Price + Body Type) -->
+            <td rowspan="2" class="cat-cell">Pricing &amp; Body</td>
+            <td><strong>Price (USD)</strong></td>
+            <td>$73,900</td>
+            <td>$91,700</td>
+            <td>$147,500</td>
+            <td>$167,800</td>
+            <td>$161,400</td>
+            <td class="winner">✅ $111,900</td>
+            <td>$158,600</td>
+            <td class="winner">✅ $74,400</td>
+            <td>$118,900</td>
+          </tr>
+          <tr>
+            <!-- Row 2 of Pricing (no cat-cell td — merged by rowspan) -->
+            <td><strong>Body Type</strong></td>
+            <td>Sedan</td>
+            <td>SUV</td>
+            <td>Hybrid Roadster</td>
+            <td>SUV</td>
+            <td>Coupe</td>
+            <td>Sedan</td>
+            <td>Coupe</td>
+            <td>Electric SUV</td>
+            <td>Wagon</td>
+          </tr>
+
+          <!-- ── ENGINE section: rowspan="3" ── -->
+          <tr>
+            <!-- rowspan="3": spans Engine, Horsepower, Torque rows -->
+            <td rowspan="3" class="cat-cell">Engine &amp; Power</td>
+            <td><strong>Engine</strong></td>
+            <td>3.0L TT I6</td>
+            <td>4.4L TT V8</td>
+            <td>1.5L T + EV</td>
+            <td>4.0L TT V8</td>
+            <td>4.0L TT V8</td>
+            <td>4.0L TT V8</td>
+            <td class="winner">✅ 5.2L NA V10</td>
+            <td>Dual EV Motor</td>
+            <td>4.0L TT V8</td>
+          </tr>
+          <tr>
+            <td><strong>Horsepower</strong></td>
+            <td>503 hp</td>
+            <td>523 hp</td>
+            <td>369 hp</td>
+            <td>577 hp</td>
+            <td class="winner">✅ 720 hp</td>
+            <td>496 hp</td>
+            <td>620 hp</td>
+            <td>402 hp</td>
+            <td>591 hp</td>
+          </tr>
+          <tr>
+            <td><strong>Torque</strong></td>
+            <td>479 lb-ft</td>
+            <td>553 lb-ft</td>
+            <td>420 lb-ft</td>
+            <td>627 lb-ft</td>
+            <td class="winner">✅ 664 lb-ft</td>
+            <td>516 lb-ft</td>
+            <td>428 lb-ft</td>
+            <td>490 lb-ft</td>
+            <td>590 lb-ft</td>
+          </tr>
+
+          <!-- ── PERFORMANCE section: rowspan="2" ── -->
+          <tr>
+            <!-- rowspan="2": spans 0-60 and Top Speed rows -->
+            <td rowspan="2" class="cat-cell">Performance</td>
+            <td><strong>0–60 mph</strong></td>
+            <td>3.9s</td>
+            <td>4.1s</td>
+            <td>4.6s</td>
+            <td>4.5s</td>
+            <td class="winner">✅ 3.1s</td>
+            <td>4.4s</td>
+            <td class="winner">✅ 3.1s</td>
+            <td>5.6s</td>
+            <td>3.5s</td>
+          </tr>
+          <tr>
+            <td><strong>Top Speed</strong></td>
+            <td>180 mph</td>
+            <td>155 mph</td>
+            <td>155 mph</td>
+            <td>130 mph</td>
+            <td class="winner">✅ 202 mph</td>
+            <td>155 mph</td>
+            <td>205 mph</td>
+            <td>124 mph</td>
+            <td>155 mph</td>
+          </tr>
+
+          <!-- ── DRIVETRAIN section: rowspan="2" ── -->
+          <tr>
+            <td rowspan="2" class="cat-cell">Drivetrain</td>
+            <td><strong>Drive System</strong></td>
+            <td>RWD / xDrive</td>
+            <td>AWD xDrive</td>
+            <td>AWD</td>
+            <td>AWD 4MATIC</td>
+            <td>RWD</td>
+            <td>AWD 4MATIC</td>
+            <td class="winner">✅ AWD Quattro</td>
+            <td>AWD Quattro</td>
+            <td>AWD Quattro</td>
+          </tr>
+          <tr>
+            <td><strong>Transmission</strong></td>
+            <td>8-spd Auto</td>
+            <td>8-spd Auto</td>
+            <td>6-spd Auto</td>
+            <td>9-spd Auto</td>
+            <td>7-spd DCT</td>
+            <td>9-spd Auto</td>
+            <td>7-spd DCT</td>
+            <td>1-spd Direct</td>
+            <td>8-spd Auto</td>
+          </tr>
+
+          <!-- ── RATINGS section: rowspan="2" ── -->
+          <tr>
+            <td rowspan="2" class="cat-cell">Ratings</td>
+            <td><strong>Fuel Economy</strong></td>
+            <td>16/23 mpg</td>
+            <td>14/20 mpg</td>
+            <td class="winner">✅ 69 MPGe</td>
+            <td>13/17 mpg</td>
+            <td>12/16 mpg</td>
+            <td>16/23 mpg</td>
+            <td>13/17 mpg</td>
+            <td class="winner">✅ 77 MPGe</td>
+            <td>15/22 mpg</td>
+          </tr>
+          <tr>
+            <td><strong>Seats</strong></td>
+            <td>5</td>
+            <td>5–7</td>
+            <td>2</td>
+            <td>5</td>
+            <td>2</td>
+            <td class="winner">✅ 5 (luxury)</td>
+            <td>2</td>
+            <td>5</td>
+            <td>5</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+    </div>
+    <!-- end specs-table-wrap -->
+
+    <hr class="section-divider" style="margin:2.5rem 0">
+
+    <!-- ══════════════════════════════════════════════════════
+         IMAGE MAP — Luxury Car Dashboard Hotspots
+         Uses <map> and <area> elements as required.
+         Hotspots: Speedometer, Tachometer, Infotainment,
+                   Climate Control, Gear Selector, Steering Wheel
+         ══════════════════════════════════════════════════════ -->
+    <section class="img-map-section">
+      <h2>Interactive Dashboard Guide</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.25rem">
+        Hover over the highlighted zones to explore key dashboard features.
+      </p>
+
+      <div class="img-map-wrap">
+        <!-- Floating tooltip (positioned absolutely inside wrapper) -->
+        <div class="hotspot-tooltip" id="hotspot-tip"></div>
+
+        <!--
+          IMAGE MAP
+          usemap="#dash-map" links the image to the <map> element.
+          Coordinates are pixel values relative to the image dimensions (800 × 450).
+          shape="rect" coords="x1,y1,x2,y2"
+          shape="circle" coords="cx,cy,radius"
+        -->
+        <img
+          id="dash-img"
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80"
+          alt="Luxury car dashboard with interactive hotspots"
+          usemap="#dash-map"
+          style="width:100%;max-width:800px;cursor:crosshair"
+        >
+
+        <map name="dash-map">
+          <!-- Hotspot 1: Steering Wheel (left center area) -->
+          <area
+            shape="circle"
+            coords="200,220,70"
+            href="#"
+            alt="Steering Wheel"
+            onmouseover="showHotspot(event, '🎯 Steering Wheel — Multifunction controls for audio, cruise &amp; phone')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Steering Wheel: Paddle shifters + multifunction controls'); return false;"
+          >
+
+          <!-- Hotspot 2: Speedometer (left gauge) -->
+          <area
+            shape="circle"
+            coords="140,180,45"
+            href="#"
+            alt="Speedometer"
+            onmouseover="showHotspot(event, '⚡ Speedometer — Analogue display up to 200+ mph')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Speedometer: 0–200+ mph analogue gauge'); return false;"
+          >
+
+          <!-- Hotspot 3: Tachometer (right gauge) -->
+          <area
+            shape="circle"
+            coords="270,180,45"
+            href="#"
+            alt="Tachometer"
+            onmouseover="showHotspot(event, '🔴 Tachometer — Engine RPM gauge, redline at 8,500')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Tachometer: Redlines at 8,500 rpm'); return false;"
+          >
+
+          <!-- Hotspot 4: Central Infotainment Screen (center top) -->
+          <area
+            shape="rect"
+            coords="310,80,520,200"
+            href="#"
+            alt="Infotainment Screen"
+            onmouseover="showHotspot(event, '📱 Infotainment — 12.3″ touchscreen with navigation &amp; CarPlay')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Infotainment: 12.3-inch touchscreen, wireless CarPlay/Android Auto'); return false;"
+          >
+
+          <!-- Hotspot 5: Climate Controls (center lower area) -->
+          <area
+            shape="rect"
+            coords="330,220,500,310"
+            href="#"
+            alt="Climate Controls"
+            onmouseover="showHotspot(event, '🌡️ Climate Control — Dual-zone automatic air conditioning')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Climate: Dual-zone automatic climate control'); return false;"
+          >
+
+          <!-- Hotspot 6: Gear Selector / Drive Mode (right center) -->
+          <area
+            shape="rect"
+            coords="510,200,640,320"
+            href="#"
+            alt="Gear Selector"
+            onmouseover="showHotspot(event, '⚙️ Gear Selector — Sport/Comfort/Eco drive mode selector')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Gear Selector: Sport, Comfort, Eco, and Individual drive modes'); return false;"
+          >
+
+          <!-- Hotspot 7: Instrument Cluster / HUD zone -->
+          <area
+            shape="rect"
+            coords="80,100,320,260"
+            href="#"
+            alt="Digital Instrument Cluster"
+            onmouseover="showHotspot(event, '🖥️ Digital Cluster — Fully configurable 12.3″ driver display')"
+            onmouseout="hideHotspot()"
+            onclick="showToast('Instrument Cluster: Fully digital 12.3-inch configurable display'); return false;"
+          >
+        </map>
+      </div>
+
+      <!-- Legend for image map -->
+      <div class="map-legend">
+        <div class="map-legend-item" onclick="showToast('Steering Wheel: Paddle shifters + multifunction controls')">🎯 Steering Wheel</div>
+        <div class="map-legend-item" onclick="showToast('Speedometer: 0-200+ mph analogue gauge')">⚡ Speedometer</div>
+        <div class="map-legend-item" onclick="showToast('Tachometer: Redlines at 8,500 rpm')">🔴 Tachometer</div>
+        <div class="map-legend-item" onclick="showToast('Infotainment: 12.3-inch touchscreen, wireless CarPlay/Android Auto')">📱 Infotainment</div>
+        <div class="map-legend-item" onclick="showToast('Climate: Dual-zone automatic climate control')">🌡️ Climate Control</div>
+        <div class="map-legend-item" onclick="showToast('Gear Selector: Sport, Comfort, Eco, and Individual drive modes')">⚙️ Gear Selector</div>
+        <div class="map-legend-item" onclick="showToast('Digital Cluster: Fully digital 12.3-inch configurable display')">🖥️ Digital Cluster</div>
+      </div>
+    </section>
+
+    <hr class="section-divider" style="margin:2.5rem 0">
+
+    <!-- ══════════════════════════════════════════════════════
+         IFRAME — Dealership Location Map
+         Embeds an OpenStreetMap iframe (no API key required)
+         showing a dealership area in London.
+         ══════════════════════════════════════════════════════ -->
+    <section class="dealership-section">
+      <h2>Visit Our Dealership</h2>
+      <p style="color:var(--text-muted);font-size:0.9rem;margin-bottom:1.25rem">
+        📍 CarShowcase Showroom — Mayfair, London. Open Mon–Sat 9am–6pm.
+      </p>
+
+      <div class="map-frame-wrap">
+        <!--
+          IFRAME ELEMENT as required.
+          Embeds OpenStreetMap for the Mayfair dealership area in London.
+          No external API key required — uses OpenStreetMap's free embed endpoint.
+        -->
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-0.1560%2C51.5050%2C-0.1400%2C51.5130&amp;layer=mapnik&amp;marker=51.5090%2C-0.1480"
+          title="CarShowcase Dealership Location — Mayfair, London"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+
+      <p style="margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted)">
+        Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener" style="color:var(--accent)">OpenStreetMap contributors</a>
+      </p>
+    </section>
+
+  </div>
+  <!-- end comparison-page -->
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2025 CarShowcase. All prices in USD. Specs are approximate.</p>
+    <nav class="footer-links">
+      <a href="bmw.html">BMW</a>
+      <a href="mercedes.html">Mercedes</a>
+      <a href="audi.html">Audi</a>
+      <a href="search.html">Search</a>
+    </nav>
+  </div>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

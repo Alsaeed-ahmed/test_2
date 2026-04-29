@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarShowcase | Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="body" class="light">
+
+<nav id="navbar">
+  <div class="nav-brand"><a href="index.html">🏎 CarShowcase</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li><a href="bmw.html">BMW</a></li>
+    <li><a href="mercedes.html">Mercedes</a></li>
+    <li><a href="audi.html">Audi</a></li>
+    <li><a href="comparison.html">Compare</a></li>
+    <li id="auth-nav-item"><a href="login.html">Login</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <button class="btn-icon audio-btn" id="sound-btn" onclick="playEngineSound()">🔊 Engine</button>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+<main>
+
+  <section class="auth-page">
+    <div class="auth-card">
+      <h2>Create account</h2>
+      <p class="auth-subtitle">Join CarShowcase — it's free</p>
+
+      <div class="success-msg" id="signup-success">
+        ✅ Account created successfully! Redirecting to login…
+      </div>
+
+      <!--
+        ALL validation is custom JavaScript — see handleSignup() in script.js
+        Rules enforced:
+          Name     : min 2 characters
+          Email    : custom regex /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+          Password : min 8 chars AND must contain at least one number
+          Confirm  : must match password
+        No `required` attribute. No `type="email"`.
+      -->
+      <form id="signup-form" novalidate>
+
+        <div class="form-group">
+          <label for="signup-name">Full name</label>
+          <input type="text" id="signup-name" placeholder="Jane Smith" autocomplete="name">
+          <div class="error-msg" id="err-name"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-email">Email address</label>
+          <!-- type="text" intentional — validated via regex in JS -->
+          <input type="text" id="signup-email" placeholder="you@example.com" autocomplete="email">
+          <div class="error-msg" id="err-email"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-password">
+            Password
+            <span style="font-weight:400;color:var(--text-muted);font-size:0.8rem">(min 8 chars, must include a number)</span>
+          </label>
+          <input type="password" id="signup-password" placeholder="Create a strong password" autocomplete="new-password">
+          <!-- Live strength indicator -->
+          <div class="pw-strength">
+            <div class="pw-strength-bar" id="pw-strength-bar"></div>
+          </div>
+          <div class="error-msg" id="err-password"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="signup-confirm">Confirm password</label>
+          <input type="password" id="signup-confirm" placeholder="Repeat your password" autocomplete="new-password">
+          <div class="error-msg" id="err-confirm"></div>
+        </div>
+
+        <button type="submit" class="form-submit">Create Account →</button>
+      </form>
+
+      <p class="auth-switch">
+        Already have an account? <a href="login.html">Sign in</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2025 CarShowcase</p>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="login.html">Log In</a>
+    </nav>
+  </div>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

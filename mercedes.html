@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarShowcase | Mercedes-Benz Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="body" class="light">
+
+<nav id="navbar">
+  <div class="nav-brand"><a href="index.html">🏎 CarShowcase</a></div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="search.html">Search</a></li>
+    <li><a href="bmw.html">BMW</a></li>
+    <li><a href="mercedes.html">Mercedes</a></li>
+    <li><a href="audi.html">Audi</a></li>
+    <li><a href="comparison.html">Compare</a></li>
+    <li id="auth-nav-item"><a href="login.html">Login</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="theme-btn" onclick="toggleTheme()">🌙 Dark Mode</button>
+    <button class="btn-icon audio-btn" id="sound-btn" onclick="playEngineSound()">🔊 Engine</button>
+  </div>
+</nav>
+
+<div id="page-wrapper">
+<main>
+
+  <header class="gallery-hero" style="background:linear-gradient(135deg,#0a0a0a 0%,#1a0a00 100%);">
+    <h1>Mercedes-Benz</h1>
+    <p>The Best or Nothing — 3 Pinnacle Models</p>
+  </header>
+
+  <section class="gallery-section">
+    <div class="cards-grid">
+
+      <!-- ── Model 1: Mercedes G-Class AMG 63 ── -->
+      <article class="car-card">
+        <img
+          src="https://images.unsplash.com/photo-1617654112368-308f6e39bef0?auto=format&fit=crop&w=600&q=80"
+          alt="Mercedes-AMG G 63"
+          loading="eager"
+        >
+        <div class="car-card-body">
+          <span class="car-badge">Mercedes</span>
+          <h3>AMG G 63</h3>
+          <p class="car-desc">
+            An unstoppable off-road legend reimagined with a hand-built AMG V8.
+            The G-Wagen is an icon that refuses to be tamed.
+          </p>
+          <div class="car-specs-mini">
+            <span>577 hp</span>
+            <span>4.0L Twin-Turbo V8</span>
+            <span>SUV</span>
+            <span>4.5s 0–60</span>
+          </div>
+          <div class="car-price">$167,800</div>
+          <a href="comparison.html" class="btn btn-outline">Compare This Car</a>
+        </div>
+      </article>
+
+      <!-- ── Model 2: Mercedes AMG GT Black Series ── -->
+      <article class="car-card">
+        <img
+          src="https://images.unsplash.com/photo-1618843992363-2d4f40d7e1ae?auto=format&fit=crop&w=600&q=80"
+          alt="Mercedes-AMG GT Black Series"
+          loading="lazy"
+        >
+        <div class="car-card-body">
+          <span class="car-badge">Mercedes</span>
+          <h3>AMG GT Black Series</h3>
+          <p class="car-desc">
+            The most powerful AMG production car ever built. A racing machine
+            barely disguised for road use, with 720 hp on tap.
+          </p>
+          <div class="car-specs-mini">
+            <span>720 hp</span>
+            <span>4.0L Twin-Turbo V8</span>
+            <span>Coupe</span>
+            <span>3.1s 0–60</span>
+          </div>
+          <div class="car-price">$161,400</div>
+          <a href="comparison.html" class="btn btn-outline">Compare This Car</a>
+        </div>
+      </article>
+
+      <!-- ── Model 3: Mercedes S-Class S580 ── -->
+      <article class="car-card">
+        <img
+          src="https://images.unsplash.com/photo-1541899481682-56bcd35f2bc1?auto=format&fit=crop&w=600&q=80"
+          alt="Mercedes S-Class S580"
+          loading="lazy"
+        >
+        <div class="car-card-body">
+          <span class="car-badge">Mercedes</span>
+          <h3>S-Class S 580</h3>
+          <p class="car-desc">
+            The benchmark luxury saloon. Packed with cutting-edge technology,
+            massage seats, and a twin-turbo V8 that makes it effortlessly fast.
+          </p>
+          <div class="car-specs-mini">
+            <span>496 hp</span>
+            <span>4.0L Twin-Turbo V8</span>
+            <span>Sedan</span>
+            <span>4.4s 0–60</span>
+          </div>
+          <div class="car-price">$111,900</div>
+          <a href="comparison.html" class="btn btn-outline">Compare This Car</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div style="margin-top:3rem;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;">
+      <h2 style="font-size:1.4rem;font-weight:800;margin-bottom:0.75rem;color:var(--text)">About Mercedes-Benz</h2>
+      <p style="color:var(--text-muted);line-height:1.8;margin-bottom:1rem">
+        Mercedes-Benz traces its roots to Karl Benz's 1886 patent for the first true automobile.
+        Today, the three-pointed star is synonymous with automotive luxury, safety innovation,
+        and AMG performance. Every model upholds the founding principle: the best or nothing.
+      </p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="comparison.html" class="btn btn-primary">⚖️ Compare All Models</a>
+        <a href="search.html" class="btn btn-outline">🔍 Search All Cars</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <p>&copy; 2025 CarShowcase. All prices in USD.</p>
+    <nav class="footer-links">
+      <a href="bmw.html">BMW</a>
+      <a href="audi.html">Audi</a>
+      <a href="comparison.html">Compare</a>
+    </nav>
+  </div>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
